@@ -8,7 +8,27 @@ class IndecisionApp extends React.Component {
         this.state = {
             options: props.options
         }
-    } 
+    }
+    
+    componentDidMount() {
+        try {
+            const json = localStorage.getItem('options');
+            const options = JSON.parse(json);
+            if(options) {
+                this.setState(() => ({ options: options}));
+            }
+        } catch (e) {
+            // Do nothing
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if(prevState.options.length !== this.state.options.length){
+            const json = JSON.stringify(this.state.options);
+            localStorage.setItem('options', json);
+            console.log("saving data")
+        }
+    }
 
     handleDeleteOptions () {
         this.setState( () => ({options: []}) );
@@ -37,7 +57,6 @@ class IndecisionApp extends React.Component {
 
     render() {
         const subtitle = "There is a lot of interesting interaction in this toDo list application";
-       
         return (
             <div>
                 <Header />
@@ -94,6 +113,7 @@ const Options = (props) => {
             <button onClick={props.handleDeleteOptions}>
                 Remove All
             </button>
+            {props.options.length === 0 && <p>Please add an option to get started!</p>}
             <p> Here are your options:</p>
             {props.options
                 .map(option => (
@@ -136,7 +156,12 @@ class AddOption extends React.Component {
         e.preventDefault();
         const option = e.target.elements.option.value.trim();
         const error = this.props.handleAddOption(option);
-        this.setState( () => ({error}) );
+        this.setState( () => ({ error }) );
+
+        if (!error) {
+            e.target.elements.option.value = '';
+        }
+
     }
 
     render() {
