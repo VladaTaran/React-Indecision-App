@@ -1,0 +1,43 @@
+//Widget Header
+// .wiget {
+//     background: white;
+//     margin-bottom: $xl-size;
+//     padding-right: 2.4rem;
+// }
+
+.widget-header {
+    display: flex;
+    margin: 0 auto; 
+    justify-content: space-between;
+    background: $bckgrnd-orange;
+    color: white;
+    padding: $s-size;
+}
+
+.widget-header__title {
+    margin: 0;
+}
+
+.message {
+    color: $green;
+    margin: 0;
+    text-align: center;
+    padding: $s-size;
+    font-size: $m-size;
+}
+
+.option {
+    display: flex;
+    justify-content: space-between;
+    font-size: $s-size;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: $s-size;
+    padding-right: 2.4rem;
+}
+
+.option__title {
+    padding-left: $m-size;
+    text-align: center;
+    color: $green;
+}
