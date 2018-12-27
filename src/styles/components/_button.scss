@@ -8,7 +8,7 @@
     font-weight: bold;
     font-size: $l-size;
     padding: 2.4rem;
-    width: 40rem;
+    outline: none;
 }
 
 .big-button:disabled {
@@ -23,6 +23,7 @@
     color: white;
     font-weight: 500;
     padding: $s-size;
+    outline: none;
 }
 
 .button--link {
@@ -30,4 +31,14 @@
     border: none;
     color: $grey;
     padding: 0;
+}
+
+@media print, screen and (max-width: 53rem) {
+    .big-button {
+        font-size: $m-size;
+    }
+
+    .button--link {
+        font-size: $s-size;  
+    }
 }

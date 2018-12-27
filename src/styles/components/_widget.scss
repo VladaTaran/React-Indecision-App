@@ -26,18 +26,8 @@
     font-size: $m-size;
 }
 
-.option {
-    display: flex;
-    justify-content: space-between;
-    font-size: $s-size;
-    background: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin-bottom: $s-size;
-    padding-right: 2.4rem;
-}
-
-.option__title {
-    padding-left: $m-size;
-    text-align: center;
-    color: $green;
+@media print, screen and (max-width: 53rem) {
+    .widget-header__title {
+        font-size: $s-size;
+    }
 }

@@ -19,3 +19,9 @@
     text-align: center;
     margin: 0;
 }
+
+@media print, screen and (max-width: 53rem) {
+    .header__subtitle {
+        font-size: $s-size;
+    }
+}

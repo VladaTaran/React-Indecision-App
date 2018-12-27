@@ -2,7 +2,7 @@ import React from 'react';
 
 const Option = (props) => (
     <div className="option">
-        {props.optionText && <p className="option__title">{props.optionText}</p>}
+        {props.optionText && <p className="option__body">{props.optionText}</p>}
         <button 
             className="button button--link"
             onClick = {(e) => {
