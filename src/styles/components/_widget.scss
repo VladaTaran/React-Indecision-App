@@ -1,0 +1,33 @@
+//Widget Header
+// .wiget {
+//     background: white;
+//     margin-bottom: $xl-size;
+//     padding-right: 2.4rem;
+// }
+
+.widget-header {
+    display: flex;
+    margin: 0 auto; 
+    justify-content: space-between;
+    background: $bckgrnd-orange;
+    color: white;
+    padding: $s-size;
+}
+
+.widget-header__title {
+    margin: 0;
+}
+
+.message {
+    color: $green;
+    margin: 0;
+    text-align: center;
+    padding: $s-size;
+    font-size: $m-size;
+}
+
+@media print, screen and (max-width: 53rem) {
+    .widget-header__title {
+        font-size: $s-size;
+    }
+}
